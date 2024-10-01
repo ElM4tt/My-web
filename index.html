@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MY WEB</title>
+</head>
+
+<body>
+  <h1>MY WEB</h1>
+
+<div id="introduction">
+
+  <h2>About my web</h2>
+
+    <p> This it's my privated WEB for particular use, im gona publish here some content,
+     if you want to acces to other privated content you need the password.</p>
+    
+</div>
+
+    <h3>Enter the password</h3>
+
+      <input type="password" id="passwordInput" placeholder="writte password here">
+      <button onclick="verifyPassword()">Access</button>
+
+      <input type="password" id="adminPasswordInput" placeholder="only admin password">
+      <button onclick="verifyAdminPassword()">Access</button>
+    
+
+ <script>
+  
+    function verifyPassword() {
+        
+        var passwordIngresed = document.getElementById("passwordInput").value;
+       
+        var correctPassword = "ThePassword";
+
+
+        if (passwordIngresed === correctPassword) {
+          
+            document.getElementById("protectedContent").style.display = "block";
+        } else {
+          
+            alert("incorrect password try again.");
+        }
+    }
+
+</script>
+
+    
+  <div id="protectedContent" style="display: none;">
+
+    <h1>Hey, you know the password!</h1>
+
+    <h3>jajajaja, is to easy, you just need to writte "ThePassword"</h3>
+
+    <h3>Ok. You can acces to this content:</h3>
+
+    <a href="./links.html">Links page</a>
+ 
+    <p>more content coming soon...</p>
+
+  </div>
+
+
+<script>  
+function verifyAdminPassword() {
+      
+      var adminPasswordIngresed = document.getElementById("adminPasswordInput").value;
+     
+      var correctAdminPassword = "200721";
+
+
+      if (adminPasswordIngresed === correctAdminPassword) {
+        
+          document.getElementById("adminContent").style.display = "block";
+      } else {
+        
+          alert("incorrect password try again.");
+      }
+    }
+</script>
+
+
+<div id="adminContent" style="display: none;">
+
+  <h1>Hey,you are admin!</h1>
+
+  <a href="./links.html">Links page</a>
+
+
+</div>
+
+
+  
